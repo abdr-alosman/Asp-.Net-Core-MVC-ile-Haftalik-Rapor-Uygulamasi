@@ -2,5 +2,15 @@
 
 projenin Çalışır Hali (Youtube Video) : 
 
-https://youtu.be/rTKEHuWI8Xc
+https://youtu.be/rTKEHuWI8Xc 
+
+Projeden Resimler : 
+
+![Haftalık Rapor uygulaması](https://i.ibb.co/0CLd2Fk/E55kran-Al-nt-s.png)
+
+![Haftalık Rapor uygulaması](https://i.ibb.co/kVLJQL6/Ekran-99-Al-nt-s.png)
+
+![Haftalık Rapor uygulaması](https://i.ibb.co/0hWJrvD/Esasaskran-Al-nt-s.png)
+
+![Haftalık Rapor uygulaması](https://i.ibb.co/tmGZYWT/4-Ekran-Al-nt-s.png)
 
