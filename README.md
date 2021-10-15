@@ -14,3 +14,6 @@ Projeden Resimler :
 
 ![Haftalık Rapor uygulaması](https://i.ibb.co/tmGZYWT/4-Ekran-Al-nt-s.png)
 
+![Haftalık Rapor uygulaması](https://i.ibb.co/k0tttVh/22.png)
+
+
