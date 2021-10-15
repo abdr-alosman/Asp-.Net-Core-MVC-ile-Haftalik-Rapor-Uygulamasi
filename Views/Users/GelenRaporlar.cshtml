@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewData["Title"] = "GelenRaporlar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+@model HaftalıkRaporu.Models.ViewModels.UserRaporVM
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table mr-1"></i>
+        Gelen Raporlar
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>   ID  </th>
+                    <th>   Rapor Adı </th>
+                    <th>   Çalışan Adı Soyadı </th>
+                    <th>   Çalışanın Ünvanı</th>
+                    <th>   Düzenleme tarihi </th>
+                    <th>   Raporlayan Kişiler </th>
+
+
+
+                    <th colspan="2" class="text-center">   İşlem </th>
+
+
+
+                </tr>
+                @foreach (var x in Model.RaportList)
+                {
+                    if (@x.Durumu == true)
+                    {
+            <tr>
+                <td>@x.Id </td>
+                <td>@x.RaporTanimi </td>
+                <td>@x.ApplicationUser.Ad @x.ApplicationUser.Soyad</td>
+                <td>@x.ApplicationUser.Unvan </td>
+                <td>@x.DuzenlenmeTarihi.ToShortDateString() </td>
+                <td>@x.RaporlayanKisi</td>
+
+
+                <td><a href="/Users/Delete/@x.Id" class="btn btn-danger"> Sil</a> </td>
+
+                <td>
+                    <a class="btn btn-info" asp-controller="Users" asp-action="JustView" asp-route-id="@x.Id"> <i class="fas fa-eye"></i> 	&nbsp;  Görüntüle </a>
+                </td>
+
+
+            </tr>
+                    }
+
+                }
+
+
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewData["Title"] = "JustView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model IEnumerable<Satir>
+
+
+@foreach (var item in Model.Take(1))
+{
+    <p>Rapor Adı : @item.Rapor.RaporTanimi </p>
+    <p>Raporlayan Kişi/Kişiler : @item.Rapor.RaporlayanKisi </p>
+    <p>Raporun Düzenlenme Tarihi : @item.Rapor.DuzenlenmeTarihi.ToShortDateString()</p>
+
+    if (item.Rapor.Durumu == false)
+    {
+
+
+        <p>Rapor Durumu : <b class="text-warning"> Gönderilmedi</b> </p>
+    }
+    else
+    {
+
+
+        <p>Rapor Durumu : <b class="text-success">Gönderildi</b>  </p>
+    }
+
+
+}
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table mr-1"></i>
+        Rapornuzun Detayları
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>   ID  </th>
+
+                    <th>   Önem Dercesi</th>
+                    <th>   Başlangış tarihi </th>
+                    <th>   Bitiş tarihi </th>
+                    <th>   Talep Sahibi </th>
+                    <th>   Planlanmış Bitirme Tarihi </th>
+                    <th>Yapılan İşler / Aksiyonlar</th>
+                    <th>Süre Aşımı/Timeout</th>
+                    <th>Haftalık Harcanan Süre (Saat)</th>
+                    <th>   Durumu </th>
+                    <th>   Yorumlar/Öneriler </th>
+
+
+
+
+
+                </tr>
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@x.Id </td>
+
+                        <td>@x.OnemDerecesi </td>
+                        <td>@x.BaslangisTar.ToShortDateString() </td>
+                        <td>@x.BitisTar.ToShortDateString()</td>
+                        <td>@x.TalepSahibi</td>
+                        <td>@x.BlanlanmisTar.ToShortDateString()</td>
+                        <td>@x.YapilanIsler</td>
+                        @if (x.Timeout == false)
+                        {
+                            <td>Süre aşımı Yok</td>
+                        }
+                        else
+                        {
+                            <td>Süre aşımı var</td>
+                        }
+
+                        <td>@x.HarcananSure</td>
+
+                        @if (@x.Durumu == false)
+                        {
+                            <td> Tamamlanmadı</td>
+                        }
+                        @if (@x.Durumu == true)
+                        {
+                            <td> Tamamlandı</td>
+                        }
+                        <td>@x.Yorumlar</td>
+
+
+
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+<a href="/Users/GelenRaporlar" class="btn btn-secondary">Geri Dön</a>

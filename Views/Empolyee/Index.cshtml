@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model IEnumerable<Rapor>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table mr-1"></i>
+        Mevcut Raporlarınız
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>   ID  </th>
+                    <th>   Rapor Tanımı </th>
+                    <th>   Düzenleme tarihi </th>
+                    <th>   Raporlayan Kişiler </th>
+                    <th>   Durumu </th>
+                    <th>   Çalışan Adı </th>
+
+                    <th  colspan="5" class="text-center">   İşlem </th>
+                    
+
+
+                </tr>
+                @foreach (var x in Model)
+                {
+            <tr>
+                <td>@x.Id </td>
+                <td>@x.RaporTanimi </td>
+                <td>@x.DuzenlenmeTarihi.ToShortDateString() </td>
+                <td>@x.RaporlayanKisi</td>
+
+                @if (@x.Durumu == false)
+                {
+                    <td> Göderilmedi</td>
+                }
+                @if (@x.Durumu == true)
+                {
+                    <td> Göderildi</td>
+                }
+                <td>@x.ApplicationUser.Ad @x.ApplicationUser.Soyad</td>
+                @if (x.Durumu == false)
+                {
+                    <td><a href="/Empolyee/Delete/@x.Id" class="btn btn-danger"> Sil</a> </td>
+                    <td><a href="/Empolyee/Goruntule/@x.Id" class="btn btn-warning"> Güncelle </a> </td>
+                    <td><a href="/Empolyee/SatirEkle/@x.Id" class="btn btn-success"> Satır Ekle</a> </td>
+                    <td>
+                        <a class="btn btn-info" asp-action="JustView" asp-route-id="@x.Id"> Görüntüle</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" asp-action="SendNotsend" asp-route-id="@x.Id"> Gönder</a>
+                    </td>
+
+
+                }
+                else
+                {
+                    <td colspan="5" class="text-center">
+                        <a class="btn btn-info" asp-action="JustView" asp-route-id="@x.Id"> Görüntüle</a>
+                    </td>
+                }
+
+
+
+
+
+            </tr>
+                }
+
+
+            </table>
+        </div>
+    </div>
+</div>
+<a asp-action="Create" asp-controller="Empolyee" class="btn btn-primary"><i class="fas fa-plus"></i> Yeni Rapor Ekle </a>

@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewData["Title"] = "edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@model HaftalıkRaporu.Models.ViewModels.UserRaporVM
+
+
+<h2 style="color: royalblue; margin-left:10px;"> @Model.Rapor.RaporTanimi Raporu Güncelle</h2>
+
+<form asp-action="edit" asp-controller="Empolyee" method="post" class="form-group">
+    <input type="hidden" asp-for="Rapor.Id" />
+    <div class="">
+        <br />
+        <div class="form-group row" style="margin-left:10px;">
+
+            <div class="col-2 offset-1">
+                <label class="col-form-label"> Rapor Tanımı : </label>
+
+            </div>
+            <div class="col-6">
+                @Html.TextBoxFor(x => x.Rapor.RaporTanimi, new { @class = "form-control" })
+            </div>
+
+        </div>
+        <div class="form-group row" style="margin-left:10px;">
+
+            <div class="col-2 offset-1">
+                <label class="col-form-label"> Rapolayan Kişiler </label>
+
+            </div>
+            <div class="col-6">
+                @Html.TextBoxFor(x => x.Rapor.RaporlayanKisi, new { @class = "form-control" })
+            </div>
+
+        </div>
+
+
+        <div class="form-group row" style="margin-left:10px;">
+            <div class="col-6 offset-3">
+                <div class="row">
+                    <div class="col-6">
+                        <input type="submit" value=" Güncelle" class="btn btn-primary form-control " />
+                    </div>
+                  
+                    <div class="col-6">
+                        <a href="/Empolyee/Goruntule/@Model.Rapor.Id" class="btn btn-secondary  form-control">Geri Dön</a>
+                    </div>
+                
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</form>
+
+
+
+
+

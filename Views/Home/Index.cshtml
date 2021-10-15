@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center m-5">
+    @if (User.IsInRole(SD.EmployeeUser))
+    {
+     
+        @Html.ActionLink("Raporlara Git", "Index", "Empolyee")
+    }
+    else
+    {
+        <h4> Haftalık rapor uygulamasına hoş geldiniz </h4>
+        <p> Raporlarınızı yazıp yöneticiye iletmek için lütfen <b>login</b> bölümünden sisteme giriş yapınız .  </p>
+    }
+
+
+</div>
