@@ -2,7 +2,7 @@
 
 projenin Çalışır Hali (Youtube Video) : 
 
-https://youtu.be/rTKEHuWI8Xc 
+https://youtu.be/NjNfyByoe7w
 
 Projeden Resimler : 
 
