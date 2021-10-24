@@ -4,8 +4,6 @@ projenin Çalışır Hali (Youtube Video) :
 
 https://youtu.be/NjNfyByoe7w
 
-Proje metni :
-
 Teknoloji: .Net Core MVC, Mssql
 
 PROJE:Haftalık rapor uygulaması
