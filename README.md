@@ -59,19 +59,3 @@ Yönetici sisteme giriş yaptıktan sonra tüm çalışanların raporlarını g�
 Haftalık raporlarının detaylarını görmek istediğinde, raporunu göndermişse sadece rapor detayını görebilmeli,
 
 eğer göndermemişse yeni satırlar ekleyebilmeli ve mevcut kayıtlar üzerinde değişiklik yapabilmelidir.
-
-Projeden Resimler : 
-
-![Haftalık Rapor uygulaması](https://i.ibb.co/0CLd2Fk/E55kran-Al-nt-s.png)
-
-![Haftalık Rapor uygulaması](https://i.ibb.co/kVLJQL6/Ekran-99-Al-nt-s.png)
-
-![Haftalık Rapor uygulaması](https://i.ibb.co/0hWJrvD/Esasaskran-Al-nt-s.png)
-
-![Haftalık Rapor uygulaması](https://i.ibb.co/tmGZYWT/4-Ekran-Al-nt-s.png)
-
-![Haftalık Rapor uygulaması](https://i.ibb.co/k0tttVh/22.png)
-![Haftalık Rapor uygulaması](https://i.ibb.co/g9YqSYM/25.png)
-
-
-
